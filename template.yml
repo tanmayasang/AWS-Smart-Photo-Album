@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  index-photosFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: index-photos-2
+      Handler: lambda-function.lambda_handler
+      Runtime: python3.7
+      CodeUri: ./lambda-functions/index-photos/
+  search-photosFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: search-photos-2
+      Handler: lambda-function.lambda_handler
+      Runtime: python3.7
+      CodeUri: ./lambda-functions/search-photos/
+
+# AWSTemplateFormatVersion: '2010-09-09'
+# Transform: 'AWS::Serverless-2016-10-31'
+# Description: Lambda starter project
+# Parameters:
+# LambdaName:
+#     Description: "search-photos"
+#     Type: "String"
+# LambdaRole:
+#     Description: "Role for this function"
+#     Type: "String"
+# Resources:
+#   LambdaInstagramWrapper:
+#     Type: 'AWS::Serverless::Function'
+#     Properties:
+#       Role: !Ref LambdaRole
+#       FunctionName: !Ref LambdaName
+#       MemorySize: 512
+#       Timeout: 60
+#       Handler: lambda-fucntion.handler
+#       Runtime: python3.7
+#       CodeUri: .
